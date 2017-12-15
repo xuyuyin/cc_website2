@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>虫虫之家才艺潜能挖掘机</title>
+    <meta name="keywords" content="虫虫之家，虫虫之家潜能，虫虫之家才艺，虫虫之家幼儿，虫虫之家早教，潜能挖掘，潜能早教，虫虫之家APP，虫虫之家舞蹈，虫虫之家朗诵，虫虫之家动作，虫虫之家唱歌，虫虫之家表演，虫虫之家国学，虫虫之家礼仪，虫虫之家演讲，屁颠虫，屁颠虫麦克风，幼儿园虐童，幼儿园，亲子乐园加盟，舞蹈视频，家长会发言稿，儿童舞蹈，亲子活动">
+    <meta name="description" content="虫虫之家，一个有趣、有益、有价的线上线下闭环的娱乐教育平台。">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/wjj.css">
+    <link rel="stylesheet" href="css/jquery.fullpage.css">
+    <script src="http://kids.familyktv.com/js/zepto.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.fullpage.min.js"></script>
+    <script src="http://kids.familyktv.com/js/share.js"></script>
+    <script type="text/javascript">
+        window.mobileUtil = (function (win, doc) {
+            var UA = navigator.userAgent;
+            var isIos = !!UA.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+            var isAndroid = UA.indexOf("Android") > -1 || UA.indexOf("Adr") > -1;
+            var isMobile = !!UA.match(/AppleWebKit.*Mobile.*/);
+            return {
+                isAndroid: isAndroid,
+                isIos: isIos,
+                isMobile: isMobile,
+                isWeixin: /MicroMessenger/gi.test(UA),
+                isQQ: /QQ\/\d/gi.test(UA),
+                isWeibo: /Weibo/gi.test(UA),
+                tapEvent: isMobile ? "tap" : "click",
+                fixScreen: function () {
+                    var metaEl = doc.querySelector('meta[name="viewport"]'),
+                        metaCtt = metaEl ? metaEl.content : "",
+                        matchScale = metaCtt.match(/initial\-scale=([\d\.]+)/),
+                        matchWidth = metaCtt.match(/width=([^,\s]+)/);
+                    if (!metaEl) { // REM
+                        var docEl = doc.documentElement,
+                            maxwidth = docEl.dataset.mw || 1200, // 每 dpr 最大页面宽度
+                            dpr = isIos ? Math.min(win.devicePixelRatio, 3) : 1,
+                            scale = 1 / dpr,
+                            tid;
+                        docEl.removeAttribute("data-mw");
+                        docEl.dataset.dpr = dpr;
+                        metaEl = doc.createElement("meta");
+                        metaEl.name = "viewport";
+                        metaEl.content = fillScale(scale);
+                        docEl.firstElementChild.appendChild(metaEl);
+                        var refreshRem = function () {
+                            var width = docEl.getBoundingClientRect().width;
+                            if (width / dpr > maxwidth) {
+                                width = maxwidth * dpr;
+                            }
+                            var rem = width / 30;
+                            docEl.style.fontSize = rem + "px";
+                        };
+                        win.addEventListener("resize", function () {
+                            clearTimeout(tid);
+                            tid = setTimeout(refreshRem, 300);
+                        }, false);
+                        win.addEventListener("pageshow", function (e) {
+                            if (e.persisted) {
+                                clearTimeout(tid);
+                                tid = setTimeout(refreshRem, 300);
+                            }
+                        }, false);
+                        refreshRem();
+                    } else if (isMobile && !matchScale && (matchWidth && matchWidth[1] != "device-width")) { // 定宽
+                        var width = parseInt(matchWidth[1]),
+                            iw = win.innerWidth || width,
+                            ow = win.outerWidth || iw,
+                            sw = win.screen.width || iw,
+                            saw = win.screen.availWidth || iw,
+                            ih = win.innerHeight || width,
+                            oh = win.outerHeight || ih,
+                            ish = win.screen.height || ih,
+                            sah = win.screen.availHeight || ih,
+                            w = Math.min(iw, ow, sw, saw, ih, oh, ish, sah),
+                            scale = w / width;
+                        if (scale < 1) {
+                            metaEl.content = metaCtt +
+                                + fillScale(scale);
+                        }
+                    }
+                    function fillScale(scale) {
+                        return "initial-scale=" + scale + ",maximum-scale=" + scale + ",minimum-scale=" + scale;
+                    }
+                },
+                getSearch: function (href) {
+                    href = href || win.location.search;
+                    var data = {},
+                        reg = new RegExp("([^?=&]+)(=([^&]*))?", "g");
+                    href && href.replace(reg, function ($0, $1, $2, $3) {
+                        data[$1] = $3;
+                    });
+                    return data;
+                }
+            };
+        })(window, document);
+        mobileUtil.fixScreen();
+        var params = mobileUtil.getSearch();
+    </script>
+</head>
+
+<body>
+    <div id="fullpage">
+        <div class="sec1 section">
+            <div class="mainWrap">
+                <nav>
+                    <ul>
+                        <li class="index active">
+                            <a href="./index.html">首页</a>
+                        </li>
+                        <li class="wjj">
+                            <a href="./wjj.html">才艺潜能挖掘机</a>
+                        </li>
+                        <li class="app">
+                            <a href="./app.html">APP</a>
+                        </li>
+                        <li class="kc">
+                            <a href="./kc.html">课程内容</a>
+                        </li>
+                        <li class="gh">
+                            <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzUyNjEyNTcxNw==&hid=11&sn=d98b555cdbc221693eafdb41f9632bee&scene=18#wechat_redirect"
+                                target="_blank">育儿干货</a>
+                        </li>
+                        <li class="about">
+                            <a href="./about.html">关于我们</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="zi1"></div>
+                <div class="zi2"></div>
+                <div class="hezi"></div>
+                <div class="zi3"></div>
+            </div>
+        </div>
+        <div class="sec2 section">
+            <div class="mainWrap">
+                <div class="shortLine"></div>
+                <div class="longLine"></div>
+                <div class="secTitle">虫虫之家潜能开发教学平台</div>
+                <div class="title2">智能交互教育电子</div>
+                <ul class="hows">
+                    <li class="how how1">多动 怎么办？</li>
+                    <li class="how how2">害羞 怎么办？</li>
+                    <li class="how how3">胆小 怎么办？</li>
+                    <li class="how how4">社交困难 怎么办？</li>
+                </ul>
+                <p class="first">很多孩子害羞、胆小、社交困难或是多动的根源是缺乏自信。当今社会，机会总是偏向于勇于争取的人，退缩的孩子只会让人失去耐心，甚至被贴上“懦弱”的标签，这将成为孩子一辈子挥之不去的阴影... ...</p>
+                <p class="second">“智能硬件+互联网+儿童潜能开发教学平台”教学整合的智能产品。</p>
+                <p class="second">系统利用心理学镜像效应和自我检视原理，通过互动练习有效的改善孩子胆小、害羞、社交困难和多动的问题，进而提高孩子自信心、表现力、模仿力、专注力、抗压力。
+                </p>
+            </div>
+        </div>
+        <div class="sec3 section">
+            <div class="mainWrap">
+                <div class="sec3Title"></div>
+                <div class="box"></div>
+                <div class="sxt">
+                    <div class="txt hide">
+                        <p>高清摄像头</p>
+                    </div>
+                    <div class="line hide"></div>
+                    <div class="dot hide"></div>
+                </div>
+                <div class="sysb">
+                    <div class="txt hide">
+                        <p>声音设备</p>
+                    </div>
+                    <div class="line hide"></div>
+                    <div class="dot hide"></div>
+                </div>
+                <div class="szq">
+                    <div class="txt hide">
+                        <p>设置区：</p>
+                        <p>一键录制，随心调节</p>
+                    </div>
+                    <div class="line hide"></div>
+                    <div class="dot hide"></div>
+                </div>
+                <div class="fxq">
+                    <div class="txt hide">
+                        <p>方向区：</p>
+                        <p>红外遥控，灵活移动</p>
+                    </div>
+                    <div class="line hide"></div>
+                    <div class="dot hide"></div>
+                </div>
+                <div class="shuzq">
+                    <div class="txt hide">
+                        <p>数字区：</p>
+                        <p>快速输入，方便快捷</p>
+                    </div>
+                    <div class="line hide"></div>
+                    <div class="dot hide"></div>
+                </div>
+            </div>
+        </div>
+        <div class="sec4 section">
+            <div class="mainWrap">
+                <div class="list">
+                    <div class="item opaHide">
+                        <img src="./images/wjj_t1.png" alt="大屏教学">
+                        <div class="itemTitle">大屏教学</div>
+                    </div>
+                    <div class="item opaHide">
+                        <img src="./images/wjj_t2.png" alt="玩乐中练">
+                        <div class="itemTitle">玩乐中练</div>
+                    </div>
+                    <div class="item opaHide">
+                        <img src="./images/wjj_t3.png" alt="互动学习">
+                        <div class="itemTitle">互动学习</div>
+                    </div>
+                    <div class="item opaHide">
+                        <img src="./images/wjj_t4.png" alt="家园共育">
+                        <div class="itemTitle">家园共育</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sec5 section">
+            <div class="mainWrap">
+                <div class="shortLine"></div>
+                <div class="longLine"></div>
+                <div class="secTitle">8个维度108节潜能开发课件</div>
+                <div class="secCtt">培养专注力，提升自信心，塑造表现力</div>
+                <div class="list">
+                    <div class="item wd">
+                        <div class="hide left">8个维度</div>
+                        <div class="hide rightTitle">全面发展，实现卓越</div>
+                        <div class="hide rightContent">唱歌、跳舞、朗诵、演讲、配音、动作、表情、表演</div>
+                        <div class="hide pic"></div>
+                    </div>
+                    <div class="item kc">
+                        <div class="hide left">108课程</div>
+                        <div class="hide rightTitle">潜能开发超级课程表</div>
+                        <div class="hide rightContent">改变孩子胆小、害羞、自闭、多动的问题。进而提高孩子自信力、表现力、模仿力、专注力、抗压力。综合能力将比同龄孩子超前1年左右。</div>
+                        <div class="hide pic"></div>
+                    </div>
+                    <div class="item zp">
+                        <div class="hide left">108作品</div>
+                        <div class="hide rightTitle">成长足迹，珍贵收藏</div>
+                        <div class="hide rightContent">记录孩子的成长足迹，将会是一种非物质财富，家庭永久的珍藏！</div>
+                        <div class="hide pic"></div>
+                    </div>
+                </div>
+                <div class="zi5"></div>
+            </div>
+        </div>
+        <div class="sec6 section">
+            <div class="mainWrap">
+                <div class="circle rotate slow">
+                    <div class="sbg rotate fast"></div>
+                    <div class="dot green"></div>
+                    <div class="dot red"></div>
+                    <div class="dot purple"></div>
+                </div>
+                <div class="circleTxt">资源多样化</div>
+                <div class="cirCtt">
+                    <p>
+                        <i class="green"></i>内容多样性，课程全覆盖</p>
+                    <p>
+                        <i class="red"></i>轻松陪伴，简单教学</p>
+                    <p>
+                        <i class="purple"></i>有序计划，看得见的进步</p>
+                </div>
+                <div class="price">
+                    <p>
+                        全国统一零售价
+                        <i></i>元/套
+                    </p>
+                </div>
+                <div class="hezi"></div>
+                <div class="rexian">
+                    <p>财富热线：400—962—6008</p>
+                    <p>财富热线：139—2987—5647（微信同号）</p>
+                </div>
+                <div class="footer">深圳市奥斯科尔电子有限公司</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            if (mobileUtil.isMobile) {
+                $("nav").css("background-image", "url()");
+                $("nav ul").css({ "margin": "1.25rem auto 0", "width": "100%" });
+            }
+
+            var pathname = window.location.pathname;
+            var reg = /(\w*\/)(\w*)(\.html)/;
+            var matchArr = pathname.match(reg);
+            var activePage = matchArr[matchArr.length - 2];
+            console.log(activePage);
+            $("." + activePage).addClass("active").siblings().removeClass("active");
+
+            $("#fullpage").fullpage({
+                anchors: [".sec1", ".sec2", ".sec3", ".sec4", ".sec5", ".sec6"],
+                loopBottom: true,
+                loopTop: true,
+                verticalCentered: true,
+
+                afterLoad: function (anchorlink, index) {
+                    switch (index) {
+                        case 1:
+                            for (let i = 1; i < 4; i++) {
+                                (function(i) {
+                                    setTimeout(() => {
+                                        $(".zi" + i).addClass("animated pulse");
+                                    }, i * 200);
+                                })(i);
+                            }
+                            break;
+                        case 2:
+                            for (let i = 1; i < 5; i++) {
+                                (function(i) {
+                                    setTimeout(() => {
+                                        $(".how" + i).addClass("animated jello");
+                                    }, i * 200);
+                                })(i);  
+                            }
+                            break;
+                        case 3:
+                            setTimeout(function () {
+                                $(".sec3 .dot").each(function () {
+                                    $(this).addClass("animated zoomIn").removeClass("hide");
+                                })
+                            }, 200);
+                            setTimeout(function () {
+                                $(".sxt .line").addClass("animated slideInLeft").removeClass("hide");
+                                $(".sysb .line").addClass("animated slideInLeft").removeClass("hide");
+                                $(".szq .line").addClass("animated slideInRight").removeClass("hide");
+                                $(".fxq .line").addClass("animated slideInRight").removeClass("hide");
+                                $(".shuzq .line").addClass("animated slideInRight").removeClass("hide");
+                            }, 600);
+                            setTimeout(function () {
+                                $(".sxt .txt").addClass("animated slideInLeft").removeClass("hide");
+                                $(".sysb .txt").addClass("animated slideInLeft").removeClass("hide");
+                                $(".szq .txt").addClass("animated slideInRight").removeClass("hide");
+                                $(".fxq .txt").addClass("animated slideInRight").removeClass("hide");
+                                $(".shuzq .txt").addClass("animated slideInRight").removeClass("hide");
+                            }, 1000);
+                            $(".left").addClass("animated slideInLeft").removeClass("hide");
+                            $(".right").addClass("animated slideInRight").removeClass("hide");
+                            break;
+                        case 4:
+                            setTimeout(() => {
+                                $($(".sec4 .item")[0]).addClass("animated zoomIn").removeClass("opaHide");
+                                $($(".sec4 .item")[3]).addClass("animated zoomIn").removeClass("opaHide");
+                            }, 200);
+                            setTimeout(() => {
+                                $($(".sec4 .item")[1]).addClass("animated zoomIn").removeClass("opaHide");
+                                $($(".sec4 .item")[2]).addClass("animated zoomIn").removeClass("opaHide");
+                            }, 400);
+                            break;
+                        case 5:
+                            setTimeout(() => {
+                                $(".wd .left").addClass("animated slideInLeft").removeClass("hide");
+                                $(".wd .rightTitle").addClass("animated lightSpeedIn").removeClass("hide");
+                                $(".wd .rightContent").addClass("animated lightSpeedIn").removeClass("hide");
+                            }, 200);
+                            setTimeout(() => {
+                                $(".wd .pic").addClass("animated zoomIn").removeClass("hide");
+                            }, 300);
+                            setTimeout(() => {
+                                $(".kc .left").addClass("animated slideInLeft").removeClass("hide");
+                                $(".kc .rightTitle").addClass("animated lightSpeedIn").removeClass("hide");
+                                $(".kc .rightContent").addClass("animated lightSpeedIn").removeClass("hide");
+                            }, 400);
+                            setTimeout(() => {
+                                $(".kc .pic").addClass("animated zoomIn").removeClass("hide");
+                            }, 500);
+                            setTimeout(() => {
+                                $(".zp .left").addClass("animated slideInLeft").removeClass("hide");
+                                $(".zp .rightTitle").addClass("animated lightSpeedIn").removeClass("hide");
+                                $(".zp .rightContent").addClass("animated lightSpeedIn").removeClass("hide");
+                            }, 600);
+                            setTimeout(() => {
+                                $(".zp .pic").addClass("animated zoomIn").removeClass("hide");
+                            }, 700);
+                            break;
+                        case 6:
+                            $(".price i").addClass("bounceIn animated");
+                            break;
+                        default:
+                            break;
+                    }
+                },
+                onLeave: function (index, nextIndex, direction) {
+                    console.log(index, nextIndex, direction);
+                    switch (index) {
+                        case 1:
+                            $(".zi1").removeClass("animated pulse");
+                            $(".zi2").removeClass("animated pulse");
+                            $(".zi3").removeClass("animated pulse");
+                            break;
+                        case 2:
+                            $(".how").removeClass("animated jello");
+                            break;
+                        case 3:
+                            $(".sec3 .dot").removeClass("animated zoomIn").addClass("hide");
+                            $(".sec3 .line").removeClass("animated slideInLeft").addClass("hide");
+                            $(".sec3 .txt").removeClass("animated slideInLeft").addClass("hide");
+                            break;
+                        case 4:
+                            $(".sec4 .item").addClass("opaHide").removeClass("animated zoomIn");
+                            break;
+                        case 5:
+                            $(".left").removeClass("animated slideInLeft").addClass("hide");
+                            $(".rightTitle").removeClass("animated lightSpeedIn").addClass("hide");
+                            $(".rightContent").removeClass("animated lightSpeedIn").addClass("hide");
+                            $(".pic").removeClass("animated zoomIn").addClass("hide");
+                            break;
+                        case 6:
+                            $(".price i").removeClass("bounceIn animated");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

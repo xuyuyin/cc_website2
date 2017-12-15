@@ -1,0 +1,7 @@
+{
+    "use": [],
+    "input": "css/main.css",
+    "output": "public/main.css",
+    "local-plugins": true,
+    "watch": true
+}

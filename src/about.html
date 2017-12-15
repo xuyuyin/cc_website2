@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>关于我们</title>
+    <meta name="keywords" content="虫虫之家，虫虫之家潜能，虫虫之家才艺，虫虫之家幼儿，虫虫之家早教，潜能挖掘，潜能早教，虫虫之家APP，虫虫之家舞蹈，虫虫之家朗诵，虫虫之家动作，虫虫之家唱歌，虫虫之家表演，虫虫之家国学，虫虫之家礼仪，虫虫之家演讲，屁颠虫，屁颠虫麦克风，幼儿园虐童，幼儿园，亲子乐园加盟，舞蹈视频，家长会发言稿，儿童舞蹈，亲子活动">
+    <meta name="description" content="虫虫之家，一个有趣、有益、有价的线上线下闭环的娱乐教育平台。">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/jquery.fullpage.css">
+    <script src="http://kids.familyktv.com/js/zepto.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.fullpage.min.js"></script>
+    <script src="http://kids.familyktv.com/js/share.js"></script>
+    <script type="text/javascript">
+        window.mobileUtil = (function (win, doc) {
+            var UA = navigator.userAgent;
+            var isIos = !!UA.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+            var isAndroid = UA.indexOf("Android") > -1 || UA.indexOf("Adr") > -1;
+            var isMobile = !!UA.match(/AppleWebKit.*Mobile.*/);
+            return {
+                isAndroid: isAndroid,
+                isIos: isIos,
+                isMobile: isMobile,
+                isWeixin: /MicroMessenger/gi.test(UA),
+                isQQ: /QQ\/\d/gi.test(UA),
+                isWeibo: /Weibo/gi.test(UA),
+                tapEvent: isMobile ? "tap" : "click",
+                fixScreen: function () {
+                    var metaEl = doc.querySelector('meta[name="viewport"]'),
+                        metaCtt = metaEl ? metaEl.content : "",
+                        matchScale = metaCtt.match(/initial\-scale=([\d\.]+)/),
+                        matchWidth = metaCtt.match(/width=([^,\s]+)/);
+                    if (!metaEl) { // REM
+                        var docEl = doc.documentElement,
+                            maxwidth = docEl.dataset.mw || 1200, // 每 dpr 最大页面宽度
+                            dpr = isIos ? Math.min(win.devicePixelRatio, 3) : 1,
+                            scale = 1 / dpr,
+                            tid;
+                        docEl.removeAttribute("data-mw");
+                        docEl.dataset.dpr = dpr;
+                        metaEl = doc.createElement("meta");
+                        metaEl.name = "viewport";
+                        metaEl.content = fillScale(scale);
+                        docEl.firstElementChild.appendChild(metaEl);
+                        var refreshRem = function () {
+                            var width = docEl.getBoundingClientRect().width;
+                            if (width / dpr > maxwidth) {
+                                width = maxwidth * dpr;
+                            }
+                            var rem = width / 30;
+                            docEl.style.fontSize = rem + "px";
+                        };
+                        win.addEventListener("resize", function () {
+                            clearTimeout(tid);
+                            tid = setTimeout(refreshRem, 300);
+                        }, false);
+                        win.addEventListener("pageshow", function (e) {
+                            if (e.persisted) {
+                                clearTimeout(tid);
+                                tid = setTimeout(refreshRem, 300);
+                            }
+                        }, false);
+                        refreshRem();
+                    } else if (isMobile && !matchScale && (matchWidth && matchWidth[1] != "device-width")) { // 定宽
+                        var width = parseInt(matchWidth[1]),
+                            iw = win.innerWidth || width,
+                            ow = win.outerWidth || iw,
+                            sw = win.screen.width || iw,
+                            saw = win.screen.availWidth || iw,
+                            ih = win.innerHeight || width,
+                            oh = win.outerHeight || ih,
+                            ish = win.screen.height || ih,
+                            sah = win.screen.availHeight || ih,
+                            w = Math.min(iw, ow, sw, saw, ih, oh, ish, sah),
+                            scale = w / width;
+                        if (scale < 1) {
+                            metaEl.content = metaCtt +
+                                + fillScale(scale);
+                        }
+                    }
+                    function fillScale(scale) {
+                        return "initial-scale=" + scale + ",maximum-scale=" + scale + ",minimum-scale=" + scale;
+                    }
+                },
+                getSearch: function (href) {
+                    href = href || win.location.search;
+                    var data = {},
+                        reg = new RegExp("([^?=&]+)(=([^&]*))?", "g");
+                    href && href.replace(reg, function ($0, $1, $2, $3) {
+                        data[$1] = $3;
+                    });
+                    return data;
+                }
+            };
+        })(window, document);
+        mobileUtil.fixScreen();
+        var params = mobileUtil.getSearch();
+    </script>
+</head>
+
+<body>
+    <div id="fullpage">
+        <div class="sec1 section">
+            <div class="mainWrap">
+                <nav>
+                    <ul>
+                        <li class="index active">
+                            <a href="./index.html">首页</a>
+                        </li>
+                        <li class="wjj">
+                            <a href="./wjj.html">才艺潜能挖掘机</a>
+                        </li>
+                        <li class="app">
+                            <a href="./app.html">APP</a>
+                        </li>
+                        <li class="kc">
+                            <a href="./kc.html">课程内容</a>
+                        </li>
+                        <li class="gh">
+                            <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzUyNjEyNTcxNw==&hid=11&sn=d98b555cdbc221693eafdb41f9632bee&scene=18#wechat_redirect"
+                                target="_blank">育儿干货</a>
+                        </li>
+                        <li class="about">
+                            <a href="./about.html">关于我们</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="shortLine"></div>
+                <div class="longLine"></div>
+                <div class="secTitle">关于我们</div>
+                <div class="logo opaHide"></div>
+                <p class="ctt">虫虫之家系列产品由上海乐乎网络科技有限公司开发并运营，乐乎隶属于贵州奥斯科尔集团，是一家专注“互联网+”的高科技公司。我们借助强势的硬件的研发、生产和销售，优秀的互联网软件的研发和推广，通过周边硬件配套设施，打造一个有趣、有益、有价的线上线下闭环的娱乐教育平台。</p>
+            </div>
+        </div>
+        <div class="sec2 section">
+            <div class="mainWrap">
+                <div class="shortLine up"></div>
+                <div class="longLine up"></div>
+                <div class="secTitle">关注我们：</div>
+                <div class="follow">
+                    <div class="qrcode">
+                        <img class="opaHide" src="./images/2wm.png" alt="虫虫之家官方微信公众号">
+                        <p>虫虫之家官方微信公众号</p>
+                    </div>
+                    <a href="http://weibo.com/u/6010770766?is_hot=1" target="_blank" class="weibo">
+                        <div class="img opaHide"></div>
+                        <p>虫虫之家官方微博</p>
+                    </a>
+                </div>
+                <div class="shortLine down"></div>
+                <div class="longLine down"></div>
+                <div class="secTitle">联系我们：</div>
+                <div class="lianxi">
+                    <p>邮箱：&nbsp&nbsp&nbsp&nbspcczj@huuhoo.com</p>
+                    <p>热线：&nbsp&nbsp&nbsp&nbsp021-52686858</p>
+                    <p>地址：&nbsp&nbsp&nbsp&nbsp上海市普陀区金沙江路1759号圣诺亚大厦A座1105室</p>
+                </div>
+            </div>
+            <footer>
+                &copy2017 上海乐乎网络科技有限公司
+                <a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action;jsessionid=bHNJnWxMGmvjKX-4wn_ZuQEp4h0oHvZIZyl2zl9tN3Lf0pEv0nhx!-648081692">沪ICP备14021964号-5</a>
+            </footer>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            if (mobileUtil.isMobile) {
+                $("nav").css("background-image", "url()");
+                $("nav ul").css({ "margin": "1.25rem auto 0", "width": "100%" });
+            }
+
+            var pathname = window.location.pathname;
+            var reg = /(\w*\/)(\w*)(\.html)/;
+            var matchArr = pathname.match(reg);
+            var activePage = matchArr[matchArr.length - 2];
+            console.log(activePage);
+            $("." + activePage).addClass("active").siblings().removeClass("active");
+
+            $("#fullpage").fullpage({
+                anchors: [".sec1", ".sec2"],
+                loopBottom: true,
+                loopTop: true,
+                verticalCentered: true,
+
+                afterLoad: function (anchorlink, index) {
+                    switch (index) {
+                        case 1:
+                            $(".sec1 .logo").addClass("animated bounceIn").removeClass("opaHide");
+                            break;
+                        case 2:
+                            $(".sec2 img").addClass("animated flipInX").removeClass("opaHide");
+                            $(".sec2 .img").addClass("animated flipInX").removeClass("opaHide");
+                        default:
+                            break;
+                    }
+                },
+                onLeave: function (index, nextIndex, direction) {
+                    console.log(index, nextIndex, direction);
+                    switch (index) {
+                        case 1:
+                            $(".sec1 .logo").removeClass("animated bounceIn").addClass("opaHide");
+                            break;
+                        case 2:
+                            $(".sec2 img").removeClass("animated flipInX").addClass("opaHide");
+                            $(".sec2 .img").removeClass("animated flipInX").addClass("opaHide");
+                        default:
+                            break;
+                    }
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
