@@ -4,16 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>虫虫之家才艺潜能挖掘机</title>
-    <meta name="keywords" content="虫虫之家，虫虫之家潜能，虫虫之家才艺，虫虫之家幼儿，虫虫之家早教，潜能挖掘，潜能早教，虫虫之家APP，虫虫之家舞蹈，虫虫之家朗诵，虫虫之家动作，虫虫之家唱歌，虫虫之家表演，虫虫之家国学，虫虫之家礼仪，虫虫之家演讲，屁颠虫，屁颠虫麦克风，幼儿园虐童，幼儿园，亲子乐园加盟，舞蹈视频，家长会发言稿，儿童舞蹈，亲子活动">
+    <meta name="keywords" content="虫虫之家，虫虫之家官网，虫虫之家官方网站，虫虫之家潜能，虫虫之家才艺，虫虫之家幼儿，虫虫之家早教，潜能挖掘，潜能早教，虫虫之家APP，虫虫之家舞蹈，虫虫之家朗诵，虫虫之家动作，虫虫之家唱歌，虫虫之家表演，虫虫之家国学，虫虫之家礼仪，虫虫之家演讲，屁颠虫，屁颠虫麦克风，幼儿园虐童，幼儿园，亲子乐园加盟，舞蹈视频，家长会发言稿，儿童舞蹈，亲子活动">
     <meta name="description" content="虫虫之家，一个有趣、有益、有价的线上线下闭环的娱乐教育平台。">
     <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/wjj.css">
-    <link rel="stylesheet" href="css/jquery.fullpage.css">
-    <script src="http://kids.familyktv.com/js/zepto.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.fullpage.min.js"></script>
-    <script src="http://kids.familyktv.com/js/share.js"></script>
+    <link rel="stylesheet" href="./vendor/jquery.fullpage.css">
     <script type="text/javascript">
         window.mobileUtil = (function (win, doc) {
             var UA = navigator.userAgent;
@@ -51,6 +45,11 @@
                                 width = maxwidth * dpr;
                             }
                             var rem = width / 30;
+                            var height1 = window.screen.availHeight;
+                            if (height1 < 1040) {
+                                heightScale = height1 / 1040;
+                                rem = rem * heightScale;
+                            }
                             docEl.style.fontSize = rem + "px";
                         };
                         win.addEventListener("resize", function () {
@@ -120,7 +119,7 @@
                             <a href="./kc.html">课程内容</a>
                         </li>
                         <li class="gh">
-                            <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzUyNjEyNTcxNw==&hid=11&sn=d98b555cdbc221693eafdb41f9632bee&scene=18#wechat_redirect"
+                            <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzUyNjEyNTcxNw==&hid=13&sn=f979dad49f9f8e7915fb0c830751723f&scene=18#wechat_redirect"
                                 target="_blank">育儿干货</a>
                         </li>
                         <li class="about">
@@ -134,7 +133,7 @@
                 <div class="zi3"></div>
             </div>
         </div>
-        <div class="sec2 section">
+        <div class="sec2 section opaHide">
             <div class="mainWrap">
                 <div class="shortLine"></div>
                 <div class="longLine"></div>
@@ -152,7 +151,7 @@
                 </p>
             </div>
         </div>
-        <div class="sec3 section">
+        <div class="sec3 section opaHide">
             <div class="mainWrap">
                 <div class="sec3Title"></div>
                 <div class="box"></div>
@@ -196,29 +195,29 @@
                 </div>
             </div>
         </div>
-        <div class="sec4 section">
+        <div class="sec4 section opaHide">
             <div class="mainWrap">
                 <div class="list">
                     <div class="item opaHide">
-                        <img src="./images/wjj_t1.png" alt="大屏教学">
+                        <img data-src="./images/wjj_t1.png" alt="大屏教学">
                         <div class="itemTitle">大屏教学</div>
                     </div>
                     <div class="item opaHide">
-                        <img src="./images/wjj_t2.png" alt="玩乐中练">
+                        <img data-src="./images/wjj_t2.png" alt="玩乐中练">
                         <div class="itemTitle">玩乐中练</div>
                     </div>
                     <div class="item opaHide">
-                        <img src="./images/wjj_t3.png" alt="互动学习">
+                        <img data-src="./images/wjj_t3.png" alt="互动学习">
                         <div class="itemTitle">互动学习</div>
                     </div>
                     <div class="item opaHide">
-                        <img src="./images/wjj_t4.png" alt="家园共育">
+                        <img data-src="./images/wjj_t4.png" alt="家园共育">
                         <div class="itemTitle">家园共育</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="sec5 section">
+        <div class="sec5 section opaHide">
             <div class="mainWrap">
                 <div class="shortLine"></div>
                 <div class="longLine"></div>
@@ -247,7 +246,7 @@
                 <div class="zi5"></div>
             </div>
         </div>
-        <div class="sec6 section">
+        <div class="sec6 section opaHide">
             <div class="mainWrap">
                 <div class="circle rotate slow">
                     <div class="sbg rotate fast"></div>
@@ -279,148 +278,7 @@
             </div>
         </div>
     </div>
-
-    <script>
-        $(document).ready(function () {
-            if (mobileUtil.isMobile) {
-                $("nav").css("background-image", "url()");
-                $("nav ul").css({ "margin": "1.25rem auto 0", "width": "100%" });
-            }
-
-            var pathname = window.location.pathname;
-            var reg = /(\w*\/)(\w*)(\.html)/;
-            var matchArr = pathname.match(reg);
-            var activePage = matchArr[matchArr.length - 2];
-            console.log(activePage);
-            $("." + activePage).addClass("active").siblings().removeClass("active");
-
-            $("#fullpage").fullpage({
-                anchors: [".sec1", ".sec2", ".sec3", ".sec4", ".sec5", ".sec6"],
-                loopBottom: true,
-                loopTop: true,
-                verticalCentered: true,
-
-                afterLoad: function (anchorlink, index) {
-                    switch (index) {
-                        case 1:
-                            for (let i = 1; i < 4; i++) {
-                                (function(i) {
-                                    setTimeout(() => {
-                                        $(".zi" + i).addClass("animated pulse");
-                                    }, i * 200);
-                                })(i);
-                            }
-                            break;
-                        case 2:
-                            for (let i = 1; i < 5; i++) {
-                                (function(i) {
-                                    setTimeout(() => {
-                                        $(".how" + i).addClass("animated jello");
-                                    }, i * 200);
-                                })(i);  
-                            }
-                            break;
-                        case 3:
-                            setTimeout(function () {
-                                $(".sec3 .dot").each(function () {
-                                    $(this).addClass("animated zoomIn").removeClass("hide");
-                                })
-                            }, 200);
-                            setTimeout(function () {
-                                $(".sxt .line").addClass("animated slideInLeft").removeClass("hide");
-                                $(".sysb .line").addClass("animated slideInLeft").removeClass("hide");
-                                $(".szq .line").addClass("animated slideInRight").removeClass("hide");
-                                $(".fxq .line").addClass("animated slideInRight").removeClass("hide");
-                                $(".shuzq .line").addClass("animated slideInRight").removeClass("hide");
-                            }, 600);
-                            setTimeout(function () {
-                                $(".sxt .txt").addClass("animated slideInLeft").removeClass("hide");
-                                $(".sysb .txt").addClass("animated slideInLeft").removeClass("hide");
-                                $(".szq .txt").addClass("animated slideInRight").removeClass("hide");
-                                $(".fxq .txt").addClass("animated slideInRight").removeClass("hide");
-                                $(".shuzq .txt").addClass("animated slideInRight").removeClass("hide");
-                            }, 1000);
-                            $(".left").addClass("animated slideInLeft").removeClass("hide");
-                            $(".right").addClass("animated slideInRight").removeClass("hide");
-                            break;
-                        case 4:
-                            setTimeout(() => {
-                                $($(".sec4 .item")[0]).addClass("animated zoomIn").removeClass("opaHide");
-                                $($(".sec4 .item")[3]).addClass("animated zoomIn").removeClass("opaHide");
-                            }, 200);
-                            setTimeout(() => {
-                                $($(".sec4 .item")[1]).addClass("animated zoomIn").removeClass("opaHide");
-                                $($(".sec4 .item")[2]).addClass("animated zoomIn").removeClass("opaHide");
-                            }, 400);
-                            break;
-                        case 5:
-                            setTimeout(() => {
-                                $(".wd .left").addClass("animated slideInLeft").removeClass("hide");
-                                $(".wd .rightTitle").addClass("animated lightSpeedIn").removeClass("hide");
-                                $(".wd .rightContent").addClass("animated lightSpeedIn").removeClass("hide");
-                            }, 200);
-                            setTimeout(() => {
-                                $(".wd .pic").addClass("animated zoomIn").removeClass("hide");
-                            }, 300);
-                            setTimeout(() => {
-                                $(".kc .left").addClass("animated slideInLeft").removeClass("hide");
-                                $(".kc .rightTitle").addClass("animated lightSpeedIn").removeClass("hide");
-                                $(".kc .rightContent").addClass("animated lightSpeedIn").removeClass("hide");
-                            }, 400);
-                            setTimeout(() => {
-                                $(".kc .pic").addClass("animated zoomIn").removeClass("hide");
-                            }, 500);
-                            setTimeout(() => {
-                                $(".zp .left").addClass("animated slideInLeft").removeClass("hide");
-                                $(".zp .rightTitle").addClass("animated lightSpeedIn").removeClass("hide");
-                                $(".zp .rightContent").addClass("animated lightSpeedIn").removeClass("hide");
-                            }, 600);
-                            setTimeout(() => {
-                                $(".zp .pic").addClass("animated zoomIn").removeClass("hide");
-                            }, 700);
-                            break;
-                        case 6:
-                            $(".price i").addClass("bounceIn animated");
-                            break;
-                        default:
-                            break;
-                    }
-                },
-                onLeave: function (index, nextIndex, direction) {
-                    console.log(index, nextIndex, direction);
-                    switch (index) {
-                        case 1:
-                            $(".zi1").removeClass("animated pulse");
-                            $(".zi2").removeClass("animated pulse");
-                            $(".zi3").removeClass("animated pulse");
-                            break;
-                        case 2:
-                            $(".how").removeClass("animated jello");
-                            break;
-                        case 3:
-                            $(".sec3 .dot").removeClass("animated zoomIn").addClass("hide");
-                            $(".sec3 .line").removeClass("animated slideInLeft").addClass("hide");
-                            $(".sec3 .txt").removeClass("animated slideInLeft").addClass("hide");
-                            break;
-                        case 4:
-                            $(".sec4 .item").addClass("opaHide").removeClass("animated zoomIn");
-                            break;
-                        case 5:
-                            $(".left").removeClass("animated slideInLeft").addClass("hide");
-                            $(".rightTitle").removeClass("animated lightSpeedIn").addClass("hide");
-                            $(".rightContent").removeClass("animated lightSpeedIn").addClass("hide");
-                            $(".pic").removeClass("animated zoomIn").addClass("hide");
-                            break;
-                        case 6:
-                            $(".price i").removeClass("bounceIn animated");
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            })
-        })
-    </script>
+    <a class="goTop"></a>
 </body>
 
 </html>

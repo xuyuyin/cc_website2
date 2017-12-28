@@ -4,18 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>虫虫之家</title>
-    <meta name="keywords" content="虫虫之家，虫虫之家潜能，虫虫之家才艺，虫虫之家幼儿，虫虫之家早教，潜能挖掘，潜能早教，虫虫之家APP，虫虫之家舞蹈，虫虫之家朗诵，虫虫之家动作，虫虫之家唱歌，虫虫之家表演，虫虫之家国学，虫虫之家礼仪，虫虫之家演讲，屁颠虫，屁颠虫麦克风，幼儿园虐童，幼儿园，亲子乐园加盟，舞蹈视频，家长会发言稿，儿童舞蹈，亲子活动">
+    <meta name="keywords" content="虫虫之家，虫虫之家官网，虫虫之家官方网站，虫虫之家潜能，虫虫之家才艺，虫虫之家幼儿，虫虫之家早教，潜能挖掘，潜能早教，虫虫之家APP，虫虫之家舞蹈，虫虫之家朗诵，虫虫之家动作，虫虫之家唱歌，虫虫之家表演，虫虫之家国学，虫虫之家礼仪，虫虫之家演讲，屁颠虫，屁颠虫麦克风，幼儿园虐童，幼儿园，亲子乐园加盟，舞蹈视频，家长会发言稿，儿童舞蹈，亲子活动">
     <meta name="description" content="虫虫之家，一个有趣、有益、有价的线上线下闭环的娱乐教育平台。">
     <link rel="shortcut icon" href="favicon.ico" />
-    <!-- <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/index.css"> -->
-    <link rel="stylesheet" href="../dist/nav.css">
-    <link rel="stylesheet" href="../dist/index.css">
-    <link rel="stylesheet" href="css/jquery.fullpage.css">
-    <script src="http://kids.familyktv.com/js/zepto.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.fullpage.min.js"></script>
-    <script src="http://kids.familyktv.com/js/share.js"></script>
+    <link rel="stylesheet" href="./vendor/jquery.fullpage.css">
     <script type="text/javascript">
         window.mobileUtil = (function (win, doc) {
             var UA = navigator.userAgent;
@@ -65,8 +57,12 @@
                                 width = maxwidth * dpr;
                             }
                             var rem = width / 30;
-                            // console.log(width);
-                            // console.log(rem);
+                            var height1 = window.screen.availHeight;
+                            // alert(height1);
+                            if (height1 < 1040 && height1 > 640 && dpr == 1) {
+                                heightScale = height1 / 1040;
+                                rem = rem * heightScale;
+                            }
                             docEl.style.fontSize = rem + 'px';
                         };
 
@@ -127,9 +123,6 @@
 
 <body>
     <div id="fullpage">
-        <div class="mainWrap">
-
-        </div>
         <div class="sec1 section">
             <div class="mainWrap">
                 <nav>
@@ -147,7 +140,7 @@
                             <a href="./kc.html">课程内容</a>
                         </li>
                         <li class="gh">
-                            <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzUyNjEyNTcxNw==&hid=11&sn=d98b555cdbc221693eafdb41f9632bee&scene=18#wechat_redirect"
+                            <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzUyNjEyNTcxNw==&hid=13&sn=f979dad49f9f8e7915fb0c830751723f&scene=18#wechat_redirect"
                                 target="_blank">育儿干货</a>
                         </li>
                         <li class="about">
@@ -160,7 +153,7 @@
                 <div class="sytext"></div>
             </div>
         </div>
-        <div class="sec2 section">
+        <div class="sec2 section opaHide">
             <div class="mainWrap">
                 <i class="shortLine"></i>
                 <i class="longLine"></i>
@@ -177,7 +170,7 @@
                 <div class="pic"></div>
             </div>
         </div>
-        <div class="sec3 section">
+        <div class="sec3 section opaHide">
             <div class="left hide">
                 <div class="ctt">
                     <div class="shortLine"></div>
@@ -195,7 +188,7 @@
             </div>
             <div class="right hide"></div>
         </div>
-        <div class="sec4 section">
+        <div class="sec4 section opaHide">
             <div class="mainWrap">
                 <div class="shortLine"></div>
                 <div class="longLine"></div>
@@ -236,70 +229,70 @@
                 </div>
             </div>
         </div>
-        <div class="sec5 section">
+        <div class="sec5 section opaHide">
             <div class="mainWrap">
                 <div class="shortLine"></div>
                 <div class="longLine"></div>
                 <div class="secTitle">合作幼儿园</div>
                 <div class="kindergartens">
                     <div class="kindergarten opaHide">
-                        <img src="./images/1.png" alt="晨燕幼儿园">
+                        <img data-src="./images/1.png" alt="晨燕幼儿园">
                         <div class="name">晨燕幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/2.png" alt="东方明珠幼儿园">
+                        <img data-src="./images/2.png" alt="东方明珠幼儿园">
                         <div class="name">东方明珠幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/3.png" alt="东升幼儿园">
+                        <img data-src="./images/3.png" alt="东升幼儿园">
                         <div class="name">东升幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/4.png" alt="东莺幼儿园">
+                        <img data-src="./images/4.png" alt="东莺幼儿园">
                         <div class="name">东莺幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/5.png" alt="鸿星幼儿园">
+                        <img data-src="./images/5.png" alt="鸿星幼儿园">
                         <div class="name">鸿星幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/6.png" alt="慧宇幼儿园">
+                        <img data-src="./images/6.png" alt="慧宇幼儿园">
                         <div class="name">慧宇幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/7.png" alt="开心幼儿园">
+                        <img data-src="./images/7.png" alt="开心幼儿园">
                         <div class="name">开心幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/8.png" alt="明日之星幼儿园">
+                        <img data-src="./images/8.png" alt="明日之星幼儿园">
                         <div class="name">明日之星幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/9.png" alt="育苗幼儿园">
+                        <img data-src="./images/9.png" alt="育苗幼儿园">
                         <div class="name">育苗幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/10.png" alt="曙光艺术幼儿园">
+                        <img data-src="./images/10.png" alt="曙光艺术幼儿园">
                         <div class="name">曙光艺术幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/11.png" alt="太阳花幼儿园">
+                        <img data-src="./images/11.png" alt="太阳花幼儿园">
                         <div class="name">太阳花幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/12.png" alt="童乐堡幼儿园">
+                        <img data-src="./images/12.png" alt="童乐堡幼儿园">
                         <div class="name">童乐堡幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/13.png" alt="小哈佛双语幼儿园">
+                        <img data-src="./images/13.png" alt="小哈佛双语幼儿园">
                         <div class="name">小哈佛双语幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/14.png" alt="小太阳幼儿园">
+                        <img data-src="./images/14.png" alt="小太阳幼儿园">
                         <div class="name">小太阳幼儿园</div>
                     </div>
                     <div class="kindergarten opaHide">
-                        <img src="./images/15.png" alt="小智星中英文幼儿园">
+                        <img data-src="./images/15.png" alt="小智星中英文幼儿园">
                         <div class="name">小智星中英文幼儿园</div>
                     </div>
                 </div>
@@ -310,89 +303,7 @@
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            var pathname = window.location.pathname;
-            pathname = pathname == '/' ? '/index.html' : pathname;
-            var reg = /(\w*\/)(\w*)(\.html)/;
-            var matchArr = pathname.match(reg);
-            var activePage = matchArr[matchArr.length - 2];
-            $("." + activePage).addClass("active").siblings().removeClass("active");
-
-            $("#fullpage").fullpage({
-                anchors: [".sec1", ".sec2", ".sec3", ".sec4", ".sec5"],
-                loopBottom: true,
-                loopTop: true,
-                verticalCentered: true,
-
-                afterLoad: function (anchorlink, index) {
-                    switch (index) {
-                        case 1:
-                            $(".syHz").addClass("animated pulse");
-                            break;
-                        case 2:
-                            $(".sec2 span").addClass("animated flash");
-                            break;
-                        case 3:
-                            $(".left").addClass("animated slideInLeft").removeClass("hide");
-                            $(".right").addClass("animated slideInRight").removeClass("hide");
-                            break;
-                        case 4:
-                            for (var i = 1; i < 5; i++) {
-                                (function (i) {
-                                    setTimeout(function () {
-                                        $(".circle" + i).addClass("animated zoomIn").removeClass("hide");
-                                    }, 300 * i);
-                                })(i);
-                            }
-                            break;
-                        case 5:
-                            $(".kindergarten").each(function (i, ele) {
-                                console.log(i);
-                                i = i < 5 ? 1 : i < 10 ? 2 : 3;
-                                
-                                if (i == 2) {
-                                    $(ele).addClass("animated lightSpeedInLeft").removeClass("opaHide");
-                                } else {
-                                    $(ele).addClass("animated lightSpeedIn").removeClass("opaHide");
-                                }
-                                
-                            })
-                            break;
-                        default:
-                            break;
-                    }
-                },
-                onLeave: function (index, nextIndex, direction) {
-                    console.log(index, nextIndex, direction);
-                    switch (index) {
-                        case 1:
-                            $(".syHz").removeClass("animated pulse");
-                            break;
-                        case 2:
-                            $(".sec2 span").removeClass("animated flash");
-                            break;
-                        case 3:
-                            $(".left").removeClass("animated slideInLeft").addClass("hide");
-                            $(".right").removeClass("animated slideInRight").addClass("hide");
-                            break;
-                        case 4:
-                            $(".circle1").addClass("hide").removeClass("animated zoomIn");
-                            $(".circle2").addClass("hide").removeClass("animated zoomIn");
-                            $(".circle3").addClass("hide").removeClass("animated zoomIn");
-                            $(".circle4").addClass("hide").removeClass("animated zoomIn");
-                            break;
-                        case 5:
-                            $(".kindergarten").addClass("opaHide").removeClass("animated lightSpeedInLeft");
-                            $(".kindergarten").addClass("opaHide").removeClass("animated lightSpeedIn");
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            })
-        })
-    </script>
+    <a class="goTop"></a>
 </body>
 
 </html>

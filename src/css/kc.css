@@ -32,7 +32,7 @@
   line-height: 1.25rem;
   font-size: 0.5rem;
   text-align: center;
-  color: #fff;
+  color: #000;
 }
 .sec1 .more {
   width: 100%;
@@ -65,13 +65,16 @@
   width: 6.675rem;
   height: 3.775rem;
   float: left;
-  margin-right: 0.275rem;
-  margin-bottom: 0.275rem;
+  margin-right: .25rem;
+  margin-bottom: .25rem;
   position: relative;
 }
 .sec2 .list .big.listItem {
   width: 13.625rem;
   height: 7.825rem;
+}
+.sec2 .list .listItem:nth-last-child(-n + 6) {
+  margin-bottom: .3rem;
 }
 .sec2 .list .listItem:nth-last-child(-n + 4) {
   margin-bottom: 0;
@@ -81,7 +84,7 @@
 }
 .sec3 {
   width: 100%;
-  background: url("../images/dibu.png") center bottom / auto 3.8rem no-repeat;
+  background: url("../images/dibu.png") center bottom / 100% 3.8rem no-repeat;
 }
 .sec3 .shortLine.up {
   background-color: #5e94ff;
@@ -114,7 +117,6 @@
 .sec3 .list .listItem {
   width: 8.925rem;
   height: 4.975rem;
-  background-color: lightblue;
   position: relative;
 }
 .sec3 .txt {

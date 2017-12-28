@@ -42,27 +42,32 @@ nav {
   top: 0;
   margin: 0 auto;
   background: url("../images/logo.png") no-repeat;
-  background-position: 2.75rem 0.875rem;
+  background-position: 2.25rem 0.875rem;
   background-size: 4.65rem 1.725rem;
   z-index: 100;
   overflow: hidden;
 }
 nav ul {
-  width: 18.75rem;
+  width: 19.75rem;
   height: 1rem;
-  margin: 0 0 0 9.15rem;
+  margin: 0 0 0 8.65rem;
   display: flex;
   justify-content: space-around;
+}
+nav ul li {
+  width: auto;
+  padding: 0 .45rem;
+  box-sizing: border-box;
+  vertical-align: middle;
 }
 nav ul li a {
   display: block;
   width: 100%;
   height: 1rem;
-  line-height: 0.55rem;
+  line-height: 1rem;
   font-size: 0.55rem;
   font-weight: bold;
   color: #fff;
-  padding: 0.23rem 0.45rem;
   box-sizing: border-box;
 }
 nav ul li.active {
@@ -108,6 +113,20 @@ footer {
   text-align: center;
   position: absolute;
   bottom: 0.675rem;
+}
+.goTop {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 145px;
+  height: 145px;
+  background-image: url("../images/backToTop2.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.goTop:hover {
+  background-image: url("../images/backToTop.png");
 }
 .animated {
   animation-duration: 1s;
@@ -410,4 +429,23 @@ footer {
 }
 .flash {
   animation-name: flash;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rotate {
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.fast {
+  animation-duration: 2s;
+}
+.slow {
+  animation-duration: 6s;
 }

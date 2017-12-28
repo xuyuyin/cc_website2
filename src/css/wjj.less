@@ -135,7 +135,7 @@
     background-image: url("../images/wjj_bg3.png"), url("../images/wjj_bg4.png");
     background-repeat: no-repeat, no-repeat;
     background-position: center top, center bottom;
-    background-size: auto 11.05rem, auto 5.65rem;
+    background-size: 100% 11.05rem, 100% 5.65rem;
 
     .sec3Title {
         width: 13.075rem;
@@ -321,7 +321,7 @@
     width: 100%;
     background: url("../images/wjj_bg6.png") no-repeat;
     background-position: center top;
-    background-size: auto 4.825rem;
+    background-size: 100% 4.825rem;
 
     .shortLine {
         background-color: #5e94ff;
@@ -476,7 +476,7 @@
 
 .sec6 {
     width: 100%;
-    background: url("../images/wjj_bg7.png") center bottom / auto 7.4rem no-repeat;
+    background: url("../images/wjj_bg7.png") center bottom / 100% 7.4rem no-repeat;
 
     .circle {
         width: 8.1rem;
@@ -628,28 +628,4 @@
         position: absolute;
         top: 21.8rem;
     }
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.rotate {
-    animation-name: rotate;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-
-.fast {
-    animation-duration: 2s;
-}
-
-.slow {
-    animation-duration: 6s;
 }

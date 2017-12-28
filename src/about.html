@@ -4,16 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>关于我们</title>
-    <meta name="keywords" content="虫虫之家，虫虫之家潜能，虫虫之家才艺，虫虫之家幼儿，虫虫之家早教，潜能挖掘，潜能早教，虫虫之家APP，虫虫之家舞蹈，虫虫之家朗诵，虫虫之家动作，虫虫之家唱歌，虫虫之家表演，虫虫之家国学，虫虫之家礼仪，虫虫之家演讲，屁颠虫，屁颠虫麦克风，幼儿园虐童，幼儿园，亲子乐园加盟，舞蹈视频，家长会发言稿，儿童舞蹈，亲子活动">
+    <meta name="keywords" content="虫虫之家，虫虫之家官网，虫虫之家官方网站，虫虫之家潜能，虫虫之家才艺，虫虫之家幼儿，虫虫之家早教，潜能挖掘，潜能早教，虫虫之家APP，虫虫之家舞蹈，虫虫之家朗诵，虫虫之家动作，虫虫之家唱歌，虫虫之家表演，虫虫之家国学，虫虫之家礼仪，虫虫之家演讲，屁颠虫，屁颠虫麦克风，幼儿园虐童，幼儿园，亲子乐园加盟，舞蹈视频，家长会发言稿，儿童舞蹈，亲子活动">
     <meta name="description" content="虫虫之家，一个有趣、有益、有价的线上线下闭环的娱乐教育平台。">
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/about.css">
-    <link rel="stylesheet" href="css/jquery.fullpage.css">
-    <script src="http://kids.familyktv.com/js/zepto.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.fullpage.min.js"></script>
-    <script src="http://kids.familyktv.com/js/share.js"></script>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="./vendor/jquery.fullpage.css">
     <script type="text/javascript">
         window.mobileUtil = (function (win, doc) {
             var UA = navigator.userAgent;
@@ -51,6 +45,11 @@
                                 width = maxwidth * dpr;
                             }
                             var rem = width / 30;
+                            var height1 = window.screen.availHeight;
+                            if (height1 < 1040) {
+                                heightScale = height1 / 1040;
+                                rem = rem * heightScale;
+                            }
                             docEl.style.fontSize = rem + "px";
                         };
                         win.addEventListener("resize", function () {
@@ -120,7 +119,7 @@
                             <a href="./kc.html">课程内容</a>
                         </li>
                         <li class="gh">
-                            <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzUyNjEyNTcxNw==&hid=11&sn=d98b555cdbc221693eafdb41f9632bee&scene=18#wechat_redirect"
+                            <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzUyNjEyNTcxNw==&hid=13&sn=f979dad49f9f8e7915fb0c830751723f&scene=18#wechat_redirect"
                                 target="_blank">育儿干货</a>
                         </li>
                         <li class="about">
@@ -135,7 +134,7 @@
                 <p class="ctt">虫虫之家系列产品由上海乐乎网络科技有限公司开发并运营，乐乎隶属于贵州奥斯科尔集团，是一家专注“互联网+”的高科技公司。我们借助强势的硬件的研发、生产和销售，优秀的互联网软件的研发和推广，通过周边硬件配套设施，打造一个有趣、有益、有价的线上线下闭环的娱乐教育平台。</p>
             </div>
         </div>
-        <div class="sec2 section">
+        <div class="sec2 section opaHide">
             <div class="mainWrap">
                 <div class="shortLine up"></div>
                 <div class="longLine up"></div>
@@ -165,54 +164,7 @@
             </footer>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            if (mobileUtil.isMobile) {
-                $("nav").css("background-image", "url()");
-                $("nav ul").css({ "margin": "1.25rem auto 0", "width": "100%" });
-            }
-
-            var pathname = window.location.pathname;
-            var reg = /(\w*\/)(\w*)(\.html)/;
-            var matchArr = pathname.match(reg);
-            var activePage = matchArr[matchArr.length - 2];
-            console.log(activePage);
-            $("." + activePage).addClass("active").siblings().removeClass("active");
-
-            $("#fullpage").fullpage({
-                anchors: [".sec1", ".sec2"],
-                loopBottom: true,
-                loopTop: true,
-                verticalCentered: true,
-
-                afterLoad: function (anchorlink, index) {
-                    switch (index) {
-                        case 1:
-                            $(".sec1 .logo").addClass("animated bounceIn").removeClass("opaHide");
-                            break;
-                        case 2:
-                            $(".sec2 img").addClass("animated flipInX").removeClass("opaHide");
-                            $(".sec2 .img").addClass("animated flipInX").removeClass("opaHide");
-                        default:
-                            break;
-                    }
-                },
-                onLeave: function (index, nextIndex, direction) {
-                    console.log(index, nextIndex, direction);
-                    switch (index) {
-                        case 1:
-                            $(".sec1 .logo").removeClass("animated bounceIn").addClass("opaHide");
-                            break;
-                        case 2:
-                            $(".sec2 img").removeClass("animated flipInX").addClass("opaHide");
-                            $(".sec2 .img").removeClass("animated flipInX").addClass("opaHide");
-                        default:
-                            break;
-                    }
-                }
-            })
-        });
-    </script>
+    <a class="goTop"></a>
 </body>
 
 </html>
