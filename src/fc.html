@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>虫虫之家</title>
+    <meta name="keywords" content="虫虫之家，虫虫之家官网，虫虫之家官方网站，虫虫之家潜能，虫虫之家才艺，虫虫之家幼儿，虫虫之家早教，潜能挖掘，潜能早教，虫虫之家APP，虫虫之家舞蹈，虫虫之家朗诵，虫虫之家动作，虫虫之家唱歌，虫虫之家表演，虫虫之家国学，虫虫之家礼仪，虫虫之家演讲，屁颠虫，屁颠虫麦克风，幼儿园虐童，幼儿园，亲子乐园加盟，舞蹈视频，家长会发言稿，儿童舞蹈，亲子活动">
+    <meta name="description" content="虫虫之家，儿童才艺潜能开发平台，成就孩子的与众不同！">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <script type="text/javascript">
+        window.mobileUtil = (function (win, doc) {
+            var UA = navigator.userAgent;
+            var isIos = !!UA.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+            var isAndroid = UA.indexOf('Android') > -1 || UA.indexOf('Adr') > -1;
+            var isMobile = !!UA.match(/AppleWebKit.*Mobile.*/);
+
+            return {
+                isAndroid: isAndroid,
+                isIos: isIos,
+                isMobile: isMobile,
+
+                isNewsApp: /NewsApp\/[\d\.]+/gi.test(UA),
+                isWeixin: /MicroMessenger/gi.test(UA),
+                isQQ: /QQ\/\d/gi.test(UA),
+                isYixin: /YiXin/gi.test(UA),
+                isWeibo: /Weibo/gi.test(UA),
+                isTXWeibo: /T(?:X|encent)MicroBlog/gi.test(UA),
+
+                tapEvent: isMobile ? 'tap' : 'click',
+
+                /**
+                 * 缩放页面
+                 */
+                fixScreen: function () {
+                    var metaEl = doc.querySelector('meta[name="viewport"]'),
+                        metaCtt = metaEl ? metaEl.content : '',
+                        matchScale = metaCtt.match(/initial\-scale=([\d\.]+)/),
+                        matchWidth = metaCtt.match(/width=([^,\s]+)/);
+
+                    if (!metaEl) { // REM
+                        var docEl = doc.documentElement,
+                            maxwidth = docEl.dataset.mw || 1200, // 每 dpr 最大页面宽度
+                            dpr = isIos ? Math.min(win.devicePixelRatio, 3) : 1,
+                            scale = 1 / dpr,
+                            tid;
+                        docEl.removeAttribute('data-mw');
+                        docEl.dataset.dpr = dpr;
+                        metaEl = doc.createElement('meta');
+                        metaEl.name = 'viewport';
+                        metaEl.content = fillScale(scale);
+                        docEl.firstElementChild.appendChild(metaEl);
+
+                        var refreshRem = function () {
+                            var width = docEl.getBoundingClientRect().width;
+                            if (width / dpr > maxwidth) {
+                                width = maxwidth * dpr;
+                            }
+                            var rem = width / 30;
+                            var height1 = window.screen.availHeight;
+                            // alert(height1);
+                            if (height1 < 1040 && height1 > 640 && dpr == 1) {
+                                heightScale = height1 / 1040;
+                                rem = rem * heightScale;
+                            }
+                            docEl.style.fontSize = rem + 'px';
+                        };
+
+                        win.addEventListener('resize', function () {
+                            clearTimeout(tid);
+                            tid = setTimeout(refreshRem, 300);
+                        }, false);
+                        win.addEventListener('pageshow', function (e) {
+                            if (e.persisted) {
+                                clearTimeout(tid);
+                                tid = setTimeout(refreshRem, 300);
+                            }
+                        }, false);
+                        refreshRem();
+                    } else if (isMobile && !matchScale && (matchWidth && matchWidth[1] != 'device-width')) { // 定宽
+                        var width = parseInt(matchWidth[1]),
+                            iw = win.innerWidth || width,
+                            ow = win.outerWidth || iw,
+                            sw = win.screen.width || iw,
+                            saw = win.screen.availWidth || iw,
+                            ih = win.innerHeight || width,
+                            oh = win.outerHeight || ih,
+                            ish = win.screen.height || ih,
+                            sah = win.screen.availHeight || ih,
+                            w = Math.min(iw, ow, sw, saw, ih, oh, ish, sah),
+                            scale = w / width;
+
+                        if (scale < 1) {
+                            metaEl.content = metaCtt + ',' + fillScale(scale);
+                        }
+                    }
+                    function fillScale(scale) {
+                        return 'initial-scale=' + scale + ',maximum-scale=' + scale + ',minimum-scale=' + scale;
+                    }
+                },
+
+                /**
+                 * 转href参数成键值对
+                 * @param href {string} 指定的href，默认为当前页href
+                 * @returns {object} 键值对
+                 */
+                getSearch: function (href) {
+                    href = href || win.location.search;
+                    var data = {},
+                        reg = new RegExp("([^?=&]+)(=([^&]*))?", "g");
+                    href && href.replace(reg, function ($0, $1, $2, $3) {
+                        data[$1] = $3;
+                    });
+                    return data;
+                }
+            };
+        })(window, document);
+
+        mobileUtil.fixScreen();
+        var params = mobileUtil.getSearch();
+        if (mobileUtil.isMobile) {
+            window.location.href = "http://www.chongchongzhijia.com/m/fc.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="mainWrap"  id="top">
+		<nav>
+			<ul>
+				<li class="index active">
+					<a href="./index.html">首页</a>
+				</li>
+				<li class="wjj">
+					<a href="./wjj.html">才艺潜能挖掘机</a>
+				</li>
+				<li class="app">
+					<a href="./app.html">APP</a>
+				</li>
+				<li class="kc">
+					<a href="./kc.html">课程内容</a>
+				</li>
+				<li class="gh">
+					<a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzUyNjEyNTcxNw==&hid=13&sn=f979dad49f9f8e7915fb0c830751723f&scene=18#wechat_redirect"
+						target="_blank">育儿干货</a>
+				</li>
+				<li class="fc">
+					<a href="./fc.html">团队风采</a>
+				</li>
+				<li class="about">
+					<a href="./about.html">关于我们</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="cardWrap">
+            <div class="card">
+                <img src="./images/alex.jpg" alt="">
+                <div class="title">CEO</div>
+                <div class="name">董俊毅 <span>Alex</span></div>
+                <p class="introduce">上海交通大学管理硕士，10余年通讯核心网行业从业经验、世界500强企业研发和管理经验，深厚的互联网技术开发背景和人脉资源。音视频、网络传输、AI领域专家，对行业的标准和技术有很深入的研究，获多项研究专利。亲自担任过PB级大数据平台项目的架构师，智能硬件+互联网行业的连续创业者。</p>
+            </div>
+            <div class="card">
+                <img src="./images/sand.jpg" alt="">
+                <div class="title">产品总监</div>
+                <div class="name">李茜 <span>Sand</span></div>
+                <p class="introduce">曾就职于国内某车联网明星公司，拥有丰富的互联网行业产品经验，5年以上产品部门管理经验，擅于制定、开展和推动产品团队各项工作流程和业务标准的执行、质量的把控。成功主导过某大型O2O项目，也有ERP产品、车联网大数据等产品的成功案例。有非常强的互联网基因，对微信、微博、社区、电商平台有深入研究。现投身儿童教育产品，掌握虫虫之家产品的生命线。凭借多年对互联网产品的沉淀，在儿童教育上为小朋友们保驾护航。</p>
+            </div>
+            <div class="card">
+                <img src="./images/dennis.jpg" alt="">
+                <div class="title">技术总监</div>
+                <div class="name">冯飞 <span>Dennis</span></div>
+                <p class="introduce">在互联网行业已修炼15年，曾在具有BAT背景的多家一线互联网公司担任高级Java开发工程师、资深架构师、高级数据库工程师，前后端开发、敏捷过程、项目管理经验丰富。虫虫之家之前，任职国内某上市公司技术总监，负责多个大型企业级项目的构建，也设计过多种类型的互联网项目，对项目速度优化、平台服务建设、数据工程架构很有心得。负责过的大数据工程团队，进行过千万级的数据处理。经历过诸多大型企业级项目的攻坚和调优，尤其擅长大型互联网系统架构设计调优、大数据系统架构设计调优等。</p>
+            </div>
+            <div class="card">
+                <img src="./images/jim.jpg" alt="">
+                <div class="title">项目经理</div>
+                <div class="name">张义家 <span>Jim</span></div>
+                <p class="introduce">可爱的开发大叔一枚，精通Java、Oracle、 MySql、FreeMarker等编程语言和数据库系统，深入掌握Spring、Spring MVC等技术框架。写代码是工作，也是一种生活方式。出走十一年的软件开发历程，归来仍是少年。搭建并优化过各类大型企业级的业务架构，从电商比价到短信平台，从金融风控到幼教娱乐，熟悉后台服务架构和系统性能调优，为产品的平稳运行保驾护航。具备很强的项目管理能力和丰富的项目实施经验。</p>
+            </div>
+            <div class="card">
+                <img src="./images/kyle.jpg" alt="">
+                <div class="title">iOS研发主管</div>
+                <div class="name">康玉龙 <span>Kyle</span></div>
+                <p class="introduce">一个富有创新精神的移动互联网开发者，从2011年至今已有数十款App先后上线，所开发的APP多次登上APP Store分类榜前十。热爱苹果应用开发，对iOS开发有深刻的理解，总结出一套自己独特的经验，擅长App的调优工作及移动客户端架构设计。作为一个持续学习者，不断地折腾各种新技术并乐于推广，在GitHub上有自己的一些小项目，一直在CSDN上写一些技术型博客，已发布多个iOS深度剖析视频课程，让大家一起感受技术的力量！“把复杂的技术简单化，简单的技术极致化”是他的座右铭，他其实是一个载着干货的老司机！</p>
+            </div>
+            <div class="card">
+                <img src="./images/tyler.jpg" alt="">
+                <div class="title">Android研发主管</div>
+                <div class="name">刘天成 <span>Tyler</span></div>
+                <p class="introduce">从事Android研发工作8年，曾任某外企Android Framework解决方案高级工程师、国内某知名电商平台的Android主程，现担任虫虫之家的Android研发主管，自己亲自主攻虫虫才艺潜能挖掘机的开发。精通架构设计及主流技术框架的同时，还熟悉OC、Swift、JavaScript、H5、小程序及Linux等。先后独立和主持开发过10余个APP并上线运营，多次被小米商店、360、百度、应用宝、豌豆荚推荐为精品。对应用开发有自己的一套成体系的经验积累，尤其擅长App的调优工作。爱 Google ，爱开源，爱分享，爱生活！</p>
+            </div>
+            <div class="card">
+                <img src="./images/leo.jpg" alt="">
+                <div class="title">Web前端研发主管</div>
+                <div class="name">李玉涛 <span>Leo</span></div>
+                <p class="introduce">拥有10年以上经验的资深WEB前端开发工程师，公司的IT男神，Full Stack Web Developer，不断追求代码、界面的可扩展性，性能，设计和出色的用户体验。从界面交互到程序性能，喜欢把控从Visual、Frontend、Backend、DevOps的每一个细节。热爱前端技术的研究与分享，对jQuery、Angular、React等各种前端框架有丰富的项目实践经验，擅长SEO和数据分析，是一个十足的技术咖。</p>
+            </div>
+            <div class="card">
+                <img src="./images/suna.jpg" alt="">
+                <div class="title">测试主管</div>
+                <div class="name">宋娜 <span>Suna</span></div>
+                <p class="introduce">资深软件测试专家，8年软件测试从业经验，精通Appium自动化测试、性能测试以及从前端到后台服务器全栈测试等。精通LoadrRunner等各种测试工具的使用。担任过多个大型软件项目的测试经理，拥有web、移动端、大数据相关项目的测试经验，在移动互联网、软件安全、云计算相关行业领域都有很深的积累。引入新的测试框架和测试策略，为虫虫之家创建了一个有效的测试团队，管理、贯彻和维护了一个有效的测试流程，搭建了一个能够支持良好沟通和有效成本控制的测试环境。定期组织业务\技术分享，提高团队测试人员的业务全局观及跨业务耦合与风险评估能力和专业技术水平。</p>
+            </div>
+            <div class="card">
+                <img src="./images/peter.jpg" alt="">
+                <div class="title">高级产品经理</div>
+                <div class="name">单志锋 <span>Peter</span></div>
+                <p class="introduce">7年产品经验，深耕社交和电商领域多年，负责国内某电商平台的规划及产品发展方向的整体把握和工作部署，结合公司发展战略，全面策划及统筹产品的发展规划，明晰定位、目标、策略并落实、实施。热衷于产品设计以及新技术领域的研究，对功能需求定位有着丰富的经验和独特的见解，对用户体验的追求有着极度的偏执狂热症。设计的应用产品曾获得苹果官方推荐。</p>
+            </div>
+            <div class="card">
+                <img src="./images/cassic.jpg" alt="">
+                <div class="title">高级视觉设计师</div>
+                <div class="name">王萌 <span>Cassic</span></div>
+                <p class="introduce">首席设计师，出身于艺术科班，拥有15年以上的美术绘画经验、5年UI设计经验。在创意和视觉上拥有自己独特的设计理念，一丝不苟和与时俱进并重，能针对需求提供合理专业的设计方案，把握整体风格的同时完善各处细节。擅长前瞻性产品的创意设计和动态demo实现。具备敏锐的设计嗅觉，了解业界动态和手持界面设计趋势，并乐于进行设计分享和传授。曾多次受邀担任行业内创意工坊讲师。</p>
+            </div>
+            <div class="card">
+                <img src="./images/yoma.jpg" alt="">
+                <div class="title">策划主管</div>
+                <div class="name">陈祎祎 <span>Yoma</span></div>
+                <p class="introduce">毕业于湖南女子学院，在校期间就是学校的风云人物，现在成为了该学校的一个传说。曾在国家部委下属的国家级刊物杂志社独立负责活动策划，做过联合国的大型活动策划以及杂志广告运营。曾任国内某上市软件公司的商务策划部经理，统筹商务、技术、策划三大部，亲自开发国家级课程内容。现在虫虫之家，传说继续......</p>
+            </div>
+        </div>
+	</div>
+    <a class="goTop" href="#top"></a>
+    <div class="try">
+        <div class="box"></div>
+        <div class="txt"></div>
+    </div>
+    <div class="formWrap hide">
+        <div class="tryForm">
+            <form>
+                <div class="tryTitle">申请试用</div>
+                <div class="tryLeft">
+                    <label for="name">
+                        <span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span><input type="text" id="name" name="name" required><i class="required"></i>
+                    </label>
+                    <label for="tel">
+                        <span>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</span><input type="tel" name="tel" id="tel" required><i class="required"></i>
+                    </label>
+                    <label for="addr" class="addr">
+                        <span>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</span><textarea name="addr" id="addr" required></textarea><i class="required"></i>
+                    </label>
+                    <span>宝宝年龄：</span><select name="age" id="age">
+                        <option value="0-2">0~2岁</option>
+                        <option value="3-6" selected>3~6岁</option>
+                        <option value="7-9">7~9岁</option>
+                        <option value="10-12">10~12岁</option>
+                        <option value="12+">12岁以上</option>
+                    </select>
+                </div>
+                <div class="qrcode">
+                    <img src="./images/xiaochunQrcode.png" alt="">
+                    <p>也可通过微信扫描上方二维码直接联系运营人员</p>
+                </div>
+                <button class="tryBtn" type="submit">提交申请</button>
+                <div class="success hide">
+                    <h4>提交成功</h4>
+                    <p><span>4</span>秒后自动关闭</p>
+                </div>
+                <div class="failed hide">
+                    <h4>提交失败</h4>
+                    <button class="tryAgain">重新提交</button>
+                </div>
+                <div class="close"></div>
+            </form>
+            <div class="toast hide"></div>
+            <div class="magicBox"></div>
+        </div>
+    </div>
+</body>
+
+</html>

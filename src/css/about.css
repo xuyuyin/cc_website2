@@ -44,15 +44,12 @@
 .sec2 .secTitle {
   margin-top: .6rem;
 }
-.sec2 .follow {
-  overflow: hidden;
-}
 .sec2 .follow p {
-  height: 0.6rem;
   line-height: 0.55rem;
   font-size: 0.5rem;
   color: #828282;
   margin-top: .2rem;
+  text-align: center;
 }
 .sec2 .qrcode {
   width: 5.65rem;

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>虫虫之家APP</title>
     <meta name="keywords" content="虫虫之家，虫虫之家官网，虫虫之家官方网站，虫虫之家潜能，虫虫之家才艺，虫虫之家幼儿，虫虫之家早教，潜能挖掘，潜能早教，虫虫之家APP，虫虫之家舞蹈，虫虫之家朗诵，虫虫之家动作，虫虫之家唱歌，虫虫之家表演，虫虫之家国学，虫虫之家礼仪，虫虫之家演讲，屁颠虫，屁颠虫麦克风，幼儿园虐童，幼儿园，亲子乐园加盟，舞蹈视频，家长会发言稿，儿童舞蹈，亲子活动">
-    <meta name="description" content="虫虫之家，一个有趣、有益、有价的线上线下闭环的娱乐教育平台。">
+    <meta name="description" content="虫虫之家，儿童才艺潜能开发平台，成就孩子的与众不同！">
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="./vendor/jquery.fullpage.css">
     <script type="text/javascript">
@@ -46,7 +46,7 @@
                             }
                             var rem = width / 30;
                             var height1 = window.screen.availHeight;
-                            if (height1 < 1040) {
+                            if (height1 < 1040 && height1 > 640 && dpr == 1) {
                                 heightScale = height1 / 1040;
                                 rem = rem * heightScale;
                             }
@@ -97,6 +97,9 @@
         })(window, document);
         mobileUtil.fixScreen();
         var params = mobileUtil.getSearch();
+        if (mobileUtil.isMobile) {
+            window.location.href = "http://www.chongchongzhijia.com/m/app.html";
+        }
     </script>
 </head>
 
@@ -121,6 +124,9 @@
                         <li class="gh">
                             <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzUyNjEyNTcxNw==&hid=13&sn=f979dad49f9f8e7915fb0c830751723f&scene=18#wechat_redirect"
                                 target="_blank">育儿干货</a>
+                        </li>
+                        <li class="fc">
+                            <a href="./fc.html">团队风采</a>
                         </li>
                         <li class="about">
                             <a href="./about.html">关于我们</a>
@@ -165,11 +171,59 @@
                     <p class="hide">虫虫之家经常举行丰富的线上/线下活动，提供给孩子一个充分展现自我的舞台，让他们在活动中释放自己的天赋。</p>
                 </div>
                 <footer>
-                    &copy2017 上海乐乎网络科技有限公司
-                    <a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action;jsessionid=bHNJnWxMGmvjKX-4wn_ZuQEp4h0oHvZIZyl2zl9tN3Lf0pEv0nhx!-648081692">沪ICP备14021964号-5</a>
+                    <!-- <p> &copy2017 上海乐乎网络科技有限公司
+                        <a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action;jsessionid=bHNJnWxMGmvjKX-4wn_ZuQEp4h0oHvZIZyl2zl9tN3Lf0pEv0nhx!-648081692">沪ICP备14021964号-5</a></p>
+                        <p>
+                            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010702002467"><img style="display: inline-block; width: 0.8rem; height: 0.8rem;" src="./images/beianIcon.png" /><span>沪公网安备 31010702002467号</span></a>
+                        </p> -->
                 </footer>
             </div>
         </div>
     </div>
     <a class="goTop"></a>
+    <div class="try">
+        <div class="box"></div>
+        <div class="txt"></div>
+    </div>
+    <div class="formWrap hide">
+        <div class="tryForm">
+            <form>
+                <div class="tryTitle">申请试用</div>
+                <div class="tryLeft">
+                    <label for="name">
+                        <span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span><input type="text" id="name" name="name" required><i class="required"></i>
+                    </label>
+                    <label for="tel">
+                        <span>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</span><input type="tel" name="tel" id="tel" required><i class="required"></i>
+                    </label>
+                    <label for="addr" class="addr">
+                        <span>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</span><textarea name="addr" id="addr" required></textarea><i class="required"></i>
+                    </label>
+                    <span>宝宝年龄：</span><select name="age" id="age">
+                        <option value="0-2">0~2岁</option>
+                        <option value="3-6" selected>3~6岁</option>
+                        <option value="7-9">7~9岁</option>
+                        <option value="10-12">10~12岁</option>
+                        <option value="12+">12岁以上</option>
+                    </select>
+                </div>
+                <div class="qrcode">
+                    <img src="./images/xiaochunQrcode.png" alt="">
+                    <p>也可通过微信扫描上方二维码直接联系运营人员</p>
+                </div>
+                <button class="tryBtn" type="submit">提交申请</button>
+                <div class="success hide">
+                    <h4>提交成功</h4>
+                    <p><span>4</span>秒后自动关闭</p>
+                </div>
+                <div class="failed hide">
+                    <h4>提交失败</h4>
+                    <button class="tryAgain">重新提交</button>
+                </div>
+                <div class="close"></div>
+            </form>
+            <div class="toast hide"></div>
+            <div class="magicBox"></div>
+        </div>
+    </div>
 </html>

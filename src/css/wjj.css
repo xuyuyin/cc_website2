@@ -145,6 +145,7 @@
 }
 .sec3 .line {
   height: .05rem;
+  min-height: 1px;
   background-color: #1078a3;
   position: absolute;
 }

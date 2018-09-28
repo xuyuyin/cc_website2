@@ -11,6 +11,7 @@ module.exports = {
         wjj: './src/js/wjj.js',
         app: './src/js/app.js',
         kc: './src/js/kc.js',
+        fc: './src/js/fc.js',
         about: './src/js/about.js'
     },
     output: {
@@ -70,6 +71,11 @@ module.exports = {
             template: './src/kc.html',
             filename: 'kc.html',
             chunks: ['kc']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/fc.html',
+            filename: 'fc.html',
+            chunks: ['fc']
         }),
         new HtmlWebpackPlugin({
             template: './src/about.html',
